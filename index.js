@@ -69,20 +69,82 @@ async function run() {
      })
     ////dishData//// 
 
+    
 
-    ////sweetDB////
- 
-    const sweetCollection = client.db('sweetDB').collection('sweetData') 
+    ////dessertData////
 
-    app.get('/sweetData', async(req, res) =>{
+    const dessertCollection = client.db('dessertDB').collection('dessertData')
 
-       const cursor = sweetCollection.find() 
-       const result = await cursor.toArray()
+    app.get('/dessertData', async(req, res) =>{
+       
+       const cursor = dessertCollection.find()
+       const result = await cursor.toArray() 
        res.send(result)
+      
+    })
+    ////dessertData////
 
-   }) 
+    ////softData////
 
-    ////sweetDB////
+    const softCollection = client.db('softDB').collection('softData')
+
+    app.get('/softData', async(req, res) =>{
+       
+       const cursor = softCollection.find()
+       const result = await cursor.toArray() 
+       res.send(result)
+      
+    })
+
+
+    ////softData////
+
+
+    ////milkData///
+
+    
+    const milkCollection = client.db('milkDB').collection('milkData')
+
+    app.get('/milkData', async(req, res) =>{
+       
+       const cursor = milkCollection.find()
+       const result = await cursor.toArray() 
+       res.send(result)
+      
+    })
+
+    ////milkData///
+
+
+    ////smoothData///
+ 
+    
+    const smoothCollection = client.db('smoothDB').collection('smoothData')
+
+    app.get('/smoothData', async(req, res) =>{
+       
+       const cursor = smoothCollection.find()
+       const result = await cursor.toArray() 
+       res.send(result)
+      
+    })
+
+    ////smoothData///
+
+    ////galleryData///
+ 
+    
+    const galleryCollection = client.db('galleryDB').collection('galleryData')
+
+    app.get('/galleryData', async(req, res) =>{
+       
+       const cursor = galleryCollection.find()
+       const result = await cursor.toArray() 
+       res.send(result)
+      
+    })
+
+    ////galleryData///
 
     
 
