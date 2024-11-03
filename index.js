@@ -56,8 +56,38 @@ async function run() {
 
     ////burgerData/////////// 
 
+    
+    ////dishData////
+     const dishCollection = client.db('dishDB').collection('dishData')
+
+     app.get('/dishData', async(req, res) =>{
+
+        const cursor = dishCollection.find()
+        const result = await cursor.toArray()
+        res.send(result)
+
+     })
+    ////dishData//// 
 
 
+    ////sweetDB////
+ 
+    const sweetCollection = client.db('sweetDB').collection('sweetData') 
+
+    app.get('/sweetData', async(req, res) =>{
+
+       const cursor = sweetCollection.find() 
+       const result = await cursor.toArray()
+       res.send(result)
+
+   }) 
+
+    ////sweetDB////
+
+    
+
+
+ 
     ///crud//////////
 
  
