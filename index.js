@@ -161,6 +161,22 @@ async function run() {
     ///blogData////
 
 
+    //universeShopData//
+
+    const shopCollection = client.db('universeShopDB').collection('universeShopData')
+
+    app.get('/universeBlogData', async(req, res) =>{
+       
+      const cursor = shopCollection.find()
+      const result = await cursor.toArray()
+      res.send(result)
+     
+    })
+
+    //universeShopData//
+
+    
+
     
 
 
