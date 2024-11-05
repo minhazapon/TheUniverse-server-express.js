@@ -165,7 +165,7 @@ async function run() {
 
     const shopCollection = client.db('universeShopDB').collection('universeShopData')
 
-    app.get('/universeBlogData', async(req, res) =>{
+    app.get('/universeShopData', async(req, res) =>{
        
       const cursor = shopCollection.find()
       const result = await cursor.toArray()
