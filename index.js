@@ -146,6 +146,21 @@ async function run() {
 
     ////galleryData///
 
+    ///blogData////
+
+    const UniverseBlogCollection = client.db('universeBlogDB').collection('universeBlogData')
+
+    app.get('/universeBlogData', async(req, res) =>{
+       
+      const cursor = UniverseBlogCollection.find()
+      const result = await cursor.toArray() 
+      res.send(result)
+     
+   })
+
+    ///blogData////
+
+
     
 
 
