@@ -173,9 +173,49 @@ async function run() {
      
     })
 
-    //universeShopData//
+   
 
+    ////crud operation/////////////
+
+    const universeCollection = client.db('universeCrudDB').collection('universeCrudData')
     
+
+    /////add system////////
+
+    app.post('/universeCrudData', async(req, res) =>{
+       
+       const universeCrudData = req.body 
+       console.log(universeCrudData)
+       const result = await universeCollection.insertOne(universeCrudData)
+       res.send(result)
+     
+    }) 
+    /////add system////////
+
+
+    /////read system///////
+        
+
+    app.get('/universeCrudData', async(req, res) =>{
+       
+       const cursor = universeCollection.find()
+       const result = await cursor.toArray();
+       res.send(result)
+    
+     }) 
+
+
+    /////read system///////
+
+
+
+ 
+
+
+
+
+
+    ////crud operation/////////////
 
     
 
