@@ -212,12 +212,10 @@ async function run() {
   
       
     app.delete('/universeCrudData/:id', async(req, res) =>{
-         
         const id = req.params.id 
         const query = { _id: new ObjectId(id) }
         const result = await universeCollection.deleteOne(query)
         res.send(result)
-      
     }) 
  
 
@@ -228,63 +226,37 @@ async function run() {
     /////update system/////////
     
     app.get('/universeCrudData/:id', async(req, res) =>{
-         
         const id = req.params.id 
         const query = { _id: new ObjectId(id) }
         const result = await universeCollection.findOne(query)
         res.send(result)
-    
     }) 
 
     app.put('/universeCrudData/:id', async(req, res) => {
-       
       const id = req.params.id 
       const upUsr = req.body 
       console.log(id, upUsr)
       const filter = { _id: new ObjectId(id) }
       const option = { upsert: true }
       const updateUser = req.body
-      
-      
       const upz = {
-
-
        $set: {
-
           image: updateUser.image,
           title: updateUser.title,
           price: updateUser.price,
           name: updateUser.name
-
        }
       }
-
       const result = await universeCollection.updateOne(filter, upz, option)
       res.send(result)
-   
-}) 
+   }) 
 
 
  
     /////update system/////////
 
- 
-
-
-
-
-
     ////crud operation/////////////
-
-    
-
-
- 
     ///crud//////////
-
- 
-
-
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
